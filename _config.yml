@@ -16,6 +16,7 @@ github_url:
 
 # build settings
 markdown: kramdown
+highlighter: rouge
 
 sass:
   style: compressed

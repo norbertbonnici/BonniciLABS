@@ -9,13 +9,13 @@ image: assets/images/chewie.jpg
 
 Chewie MRK III is a lean mean machine capable of producing a ridiculous amount of torque. Its main weapon is itself, but now a high speed drum has been fitted for it to be more offensive.
 
-##Specifications
+## Specifications
 1. 1.4 horsepower DC motors
 2. 2x 5” wheels accessible from top and bottom
 3. 5 Amp hour main battery
 4. Aluminium-wood chassis
 
-##So what makes the robot so awesome?
+## So what makes the robot so awesome?
 
 We use two NPC 24V DC brush-motors (like the ones used to move wheelchairs with heavy grandmas) which are capable of producing 0.74 horsepower each at 4000 rotations per minute. To make this power useable we geared the drive down with a ratio 4 using stress-proof steel gears which are directly coupled to 5 inch rubber tires. This means that the robot can travel approximately at 40 km per hour. This comes with a great price since each drive including gears, mountings and wheels add up to 7 kg which is 41 % of the maximum allowed weight. On a side note, during testing we used to power the drive to the max and then suddenly change the direction of motion, the force produced from the change of momentum made the motors jump a couple of cm off the bench.
 

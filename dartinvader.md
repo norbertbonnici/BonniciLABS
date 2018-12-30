@@ -7,7 +7,7 @@ description: A hobbyweight class robot - Won IEEE Robot Wars 2014
 image: assets/images/dartinvader.jpg
 ---
 
-##Specifications
+## Specifications
 
 1. 2x 500W brushless motors
 2. High speed spinning blade
