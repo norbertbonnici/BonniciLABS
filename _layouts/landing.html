@@ -23,7 +23,7 @@
 
             <!-- One -->
             <section id="one" class="spotlights">
-                {% for subpage in site.pages limit:site.tiles-count%}
+                {% for subpage in site.pages %}
                 {% if subpage.type == page.group %}
                 <section>
                     <a href="{{subpage.url}}" class="image">
