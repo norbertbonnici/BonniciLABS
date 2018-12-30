@@ -13,7 +13,7 @@
 <nav id="menu">
 	<ul class="links">
 		<li class="submenu">
-			<a href="{{ page.url }}/apps.html">Applications</a>
+			<a href="{{ site.url }}/apps.html">Applications</a>
 			<ul class="links">
 				{% for page in site.pages %}
 				{% if page.layout != "home" and page.type == "app" %}
@@ -23,10 +23,10 @@
 			</ul>
 		</li>
 		<li class="submenu">
-			<a href="{{ page.url }}/robots.html">Robots</a>
+			<a href="{{ site.url }}/robots.html">Robots</a>
 			<ul class="links">
 				{% for page in site.pages %}
-				{% if page.layout != "home" and page.type == "robots" %}
+				{% if page.layout != "home" and page.type == "robot" %}
 					<li><a href="{{ page.url }}">{{ page.title }}</a></li>
 				{% endif %}
 				{% endfor %}
@@ -34,7 +34,7 @@
 		</li>
 	</ul>
 	<ul class="actions vertical">
-		<li><a href="{{ page.url }}" class="button special fit">Home</a></li>
+		<li><a href="{{ site.url }}" class="button special fit">Home</a></li>
 	</ul>
 </nav>
 
