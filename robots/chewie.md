@@ -5,7 +5,7 @@ type: robot
 date: 2013-11-10T12:00:00Z
 description: A featherweight class robot - Won IEEE Robot Wars 2013
 image: assets/images/chewie.jpg
-page.show_tile: true
+show_tile: true
 ---
 
 Chewie MRK III is a lean mean machine capable of producing a ridiculous amount of torque. Its main weapon is itself, but now a high speed drum has been fitted for it to be more offensive.

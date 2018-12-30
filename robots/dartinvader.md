@@ -5,7 +5,7 @@ type: robot
 date: 2014-12-01T12:00:00Z
 description: A hobbyweight class robot - Won IEEE Robot Wars 2014
 image: assets/images/dartinvader.jpg
-page.show_tile: true
+show_tile: true
 ---
 
 ## Specifications

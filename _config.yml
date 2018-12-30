@@ -8,8 +8,8 @@ url: https://bonnicilabs.com # the base hostname & protocol for your site
 author: Norbert Bonnici
 
 # homepage tiles
-tiles-source: pages # accepts "posts" or "pages"
-tiles-count: 3
+tiles-source: pages
+tiles-count: 2
 
 # social settings
 github_url: 
