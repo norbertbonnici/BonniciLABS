@@ -1,6 +1,6 @@
 ---
 layout: landing
-title: Applications
+title: Robots
 show_tile: true
 group: robot
 ---
