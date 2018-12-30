@@ -1,0 +1,21 @@
+# site settings
+title: BonniciLABS
+subtitle: Norbert's pro bono portfolio
+email: info@bonnicilabs.com
+description: Norbert's pro bono portfolio
+baseurl: "/" # the subpath of your site, e.g. /blog
+url: https://bonnicilabs.com # the base hostname & protocol for your site
+author: Norbert Bonnici
+
+# homepage tiles
+tiles-source: posts # accepts "posts" or "pages"
+tiles-count: 3
+
+# social settings
+github_url: 
+
+# build settings
+markdown: kramdown
+
+sass:
+  style: compressed
