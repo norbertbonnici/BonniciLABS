@@ -1,7 +1,7 @@
 ---
 layout: landing
 title: Applications
-show_tile: false
+show_tile: true
 group: app
 ---
 
