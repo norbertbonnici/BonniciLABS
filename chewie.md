@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: Chewie
 type: robot
 date: 2013-11-10T12:00:00Z

@@ -1,7 +1,7 @@
 ---
 layout: home
 title: Home
-landing-title: "Norbert's pro bono porfolio"
+landing-title: BonniciLABS
 description: null
 image: null
 author: null

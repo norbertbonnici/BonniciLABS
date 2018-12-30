@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: OxO
 type: app
 date: 2013-05-28T12:00:00Z

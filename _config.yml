@@ -8,7 +8,7 @@ url: https://bonnicilabs.com # the base hostname & protocol for your site
 author: Norbert Bonnici
 
 # homepage tiles
-tiles-source: posts # accepts "posts" or "pages"
+tiles-source: pages # accepts "posts" or "pages"
 tiles-count: 3
 
 # social settings
