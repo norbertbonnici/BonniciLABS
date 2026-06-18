@@ -8,8 +8,21 @@ baseurl: ""
 github_username: norbertbonnici
 callsign: "9H"
 
+# ── Collections ─────────────────────────────────────────
+# Each file in _projects/ becomes a page at /projects/<name>/
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+
 # ── Build ───────────────────────────────────────────────
-# No theme / no remote_theme — the layout in _layouts is the whole design.
 markdown: kramdown
 sass:
   style: compressed

@@ -1,0 +1,50 @@
+---
+layout: default
+---
+<article class="case">
+  <div class="wrap">
+    <a class="case-back" href="{{ '/' | relative_url }}#evidence">← case index</a>
+
+    <div class="case-rec">
+      <span>REF&nbsp;{{ page.ref }} · {{ page.category }}</span>
+      <span class="st"><span class="dot state--{{ page.state }}"></span>{{ page.status }}</span>
+    </div>
+
+    <h1 class="case-title">{{ page.title }}</h1>
+    {% if page.summary %}<p class="case-lead">{{ page.summary | escape }}</p>{% endif %}
+
+    <div class="case-spec">
+      {% if page.stack %}<div><span class="k">Stack</span><span class="v">{{ page.stack | join: " · " }}</span></div>{% endif %}
+      {% if page.platform %}<div><span class="k">Platform</span><span class="v">{{ page.platform }}</span></div>{% endif %}
+      {% if page.year %}<div><span class="k">Year</span><span class="v">{{ page.year }}</span></div>{% endif %}
+      <div><span class="k">Status</span><span class="v">{{ page.status }}</span></div>
+    </div>
+
+    {% if page.progress %}
+    <div class="ft-prog case-prog">
+      <div class="ft-prog-label">
+        <span>{{ page.progress_label | default: "PROGRESS" }}</span>
+        <span>{{ page.progress }}%</span>
+      </div>
+      <div class="ft-prog-track"><div class="ft-prog-fill" style="width: {{ page.progress }}%"></div></div>
+    </div>
+    {% endif %}
+
+    <div class="case-body">
+      {{ content }}
+    </div>
+
+    {% if page.tags %}<p class="case-tags">{{ page.tags }}</p>{% endif %}
+    {% if page.repo %}<p class="case-links"><a href="{{ page.repo }}" rel="noopener">→ repository</a></p>{% endif %}
+
+    <nav class="case-other">
+      <div class="case-other-h">Other files</div>
+      <div class="case-other-grid">
+        {% assign others = site.projects | sort: "order" %}
+        {% for o in others %}{% unless o.url == page.url %}
+        <a href="{{ o.url | relative_url }}"><span>REF {{ o.ref }}</span> {{ o.title }}</a>
+        {% endunless %}{% endfor %}
+      </div>
+    </nav>
+  </div>
+</article>

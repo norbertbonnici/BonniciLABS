@@ -15,21 +15,25 @@ layout: default
   <div class="ft-hex" id="hexcol" aria-hidden="true"></div>
 </section>
 
+{% assign all = site.projects | sort: "order" %}
+{% assign active = all | where_exp: "p", "p.archived != true" %}
+{% assign archive = all | where_exp: "p", "p.archived == true" %}
+
 <section class="wrap" id="evidence">
   <div class="ft-sec-h">
     <span>EVIDENCE&nbsp;//&nbsp;<b>active projects</b></span>
-    <span>{{ site.data.projects | size }} ITEMS</span>
+    <span>{{ active | size }} ITEMS</span>
   </div>
 
   <div class="ft-grid">
-    {% for p in site.data.projects %}
+    {% for p in active %}
     <article class="ft-card{% if p.featured %} feat{% endif %}">
       <div class="rec">
         <span>REF&nbsp;{{ p.ref }} · {{ p.category }}</span>
         <span class="st"><span class="dot state--{{ p.state }}"></span>{{ p.status }}</span>
       </div>
-      <h3>{{ p.title }}</h3>
-      <p>{{ p.description | escape }}</p>
+      <h3><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
+      <p>{{ p.summary | escape }}</p>
       {% if p.tags %}<p class="tags">{{ p.tags }}</p>{% endif %}
 
       {% if p.progress %}
@@ -44,9 +48,31 @@ layout: default
 
       <div class="ref">
         <span>{{ p.meta_left }}</span>
-        <a href="{{ p.url }}">→ open file</a>
+        <a href="{{ p.url | relative_url }}">→ open file</a>
       </div>
     </article>
     {% endfor %}
   </div>
 </section>
+
+{% if archive.size > 0 %}
+<section class="wrap" id="archive">
+  <div class="ft-sec-h">
+    <span>ARCHIVE&nbsp;//&nbsp;<b>retained on file</b></span>
+    <span>{{ archive | size }} ITEMS</span>
+  </div>
+  <div class="ft-archive">
+    {% for p in archive %}
+    <a class="arc-card" href="{{ p.url | relative_url }}">
+      <div class="rec">
+        <span>REF&nbsp;{{ p.ref }} · {{ p.category }}</span>
+        <span class="st"><span class="dot state--{{ p.state }}"></span>{{ p.status }}</span>
+      </div>
+      <h3>{{ p.title }}</h3>
+      <p>{{ p.summary | escape }}</p>
+      <span class="arc-open">→ open file</span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
