@@ -1,0 +1,52 @@
+---
+layout: default
+---
+<section class="ft-hero" id="top">
+  <div class="wrap hero-inner">
+    <p class="ft-tag">// digital forensics · network security · builder</p>
+    <h1>Norbert<br>Bonnici<span class="cur" aria-hidden="true"></span></h1>
+    <p class="ft-sub">I take systems apart to understand them — then build the tools that make the next investigation faster. DFIR, reverse engineering, and a workbench full of side projects.</p>
+    <div class="ft-meta">
+      <span class="ft-chip"><b>CISSP</b> · GCFA · GCFE · GASF</span>
+      <span class="ft-chip">GIAC Advisory Board</span>
+      <span class="ft-chip">Malta <b>↗</b></span>
+    </div>
+  </div>
+  <div class="ft-hex" id="hexcol" aria-hidden="true"></div>
+</section>
+
+<section class="wrap" id="evidence">
+  <div class="ft-sec-h">
+    <span>EVIDENCE&nbsp;//&nbsp;<b>active projects</b></span>
+    <span>{{ site.data.projects | size }} ITEMS</span>
+  </div>
+
+  <div class="ft-grid">
+    {% for p in site.data.projects %}
+    <article class="ft-card{% if p.featured %} feat{% endif %}">
+      <div class="rec">
+        <span>REF&nbsp;{{ p.ref }} · {{ p.category }}</span>
+        <span class="st"><span class="dot state--{{ p.state }}"></span>{{ p.status }}</span>
+      </div>
+      <h3>{{ p.title }}</h3>
+      <p>{{ p.description | escape }}</p>
+      {% if p.tags %}<p class="tags">{{ p.tags }}</p>{% endif %}
+
+      {% if p.progress %}
+      <div class="ft-prog">
+        <div class="ft-prog-label">
+          <span>{{ p.progress_label | default: "PROGRESS" }}</span>
+          <span>{{ p.progress }}%</span>
+        </div>
+        <div class="ft-prog-track"><div class="ft-prog-fill" style="width: {{ p.progress }}%"></div></div>
+      </div>
+      {% endif %}
+
+      <div class="ref">
+        <span>{{ p.meta_left }}</span>
+        <a href="{{ p.url }}">→ open file</a>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>

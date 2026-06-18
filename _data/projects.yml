@@ -1,0 +1,65 @@
+# ─────────────────────────────────────────────────────────────
+# BonniciLABS — projects shown in the homepage "evidence" grid.
+#
+# To add a project: copy a block below and edit the fields.
+#   state:          dev | live | ongoing | archive   (sets the status-dot colour)
+#   featured: true  makes the card span the full width (use on one card)
+#   progress: 0-100 + progress_label  shows a completion meter (omit to hide)
+#   url:            link the "open file" action (e.g. a GitHub repo)
+# ─────────────────────────────────────────────────────────────
+
+- ref: "STR-01"
+  title: "StrataDFIR"
+  category: "APPLICATION"
+  status: "IN DEVELOPMENT"
+  state: "dev"
+  featured: true
+  description: >-
+    An on-device forensics workbench for macOS & iOS, built on The Sleuth Kit
+    with a SwiftUI front-end — extended with Apple's Foundation Models so an
+    analyst can question an artifact with the LLM running entirely on the
+    machine. Air-gapped by design: nothing leaves the device.
+  tags: "swiftui · the sleuth kit · foundation models · macos / ios"
+  progress: 68
+  progress_label: "BUILD"
+  meta_left: "analysis_mode: local"
+  url: "#"
+
+- ref: "LIR-02"
+  title: "Lira"
+  category: "APPLICATION"
+  status: "LIVE"
+  state: "live"
+  description: >-
+    Self-hosted personal finance as a single static Go binary over SQLite, with
+    TOTP 2FA — named after Malta's pre-2008 currency. Runs quietly on a
+    ZimaBoard behind a Cloudflare tunnel.
+  tags: "go · sqlite · self-hosted · totp"
+  meta_left: "build: single_binary"
+  url: "#"
+
+- ref: "SWB-03"
+  title: "Switchboard"
+  category: "APPLICATION"
+  status: "IN DEVELOPMENT"
+  state: "dev"
+  description: >-
+    A SwiftUI + SwiftData app that fuses a kanban board with live home-lab
+    infrastructure tracking — projects and machines on one deck.
+  tags: "swiftui · swiftdata · ios / macos"
+  progress: 35
+  progress_label: "BUILD"
+  meta_left: "store: swiftdata"
+  url: "#"
+
+- ref: "ARC-04"
+  title: "From the archive"
+  category: "ARCHIVE"
+  status: "LEGACY"
+  state: "archive"
+  description: >-
+    Earlier builds still on file — the OxO app and the Chewie and Dart Invader
+    robots from the original BonniciLABS.
+  tags: "oxo · chewie · dart invader"
+  meta_left: "retained: yes"
+  url: "#"

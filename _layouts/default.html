@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include head.html %}
+</head>
+<body>
+  {% include header.html %}
+  <main>
+    {{ content }}
+  </main>
+  {% include footer.html %}
+
+  <script>
+    /* Hero hex-dump column — decorative, regenerates each load. */
+    (function () {
+      var el = document.getElementById('hexcol');
+      if (!el) return;
+      var hex = '0123456789ABCDEF', out = '';
+      for (var r = 0; r < 60; r++) {
+        var line = (r * 16).toString(16).padStart(8, '0').toUpperCase() + '  ';
+        for (var c = 0; c < 8; c++) {
+          line += hex[(Math.random() * 16) | 0] + hex[(Math.random() * 16) | 0] + ' ';
+        }
+        out += line + '\n';
+      }
+      el.textContent = out;
+    })();
+  </script>
+</body>
+</html>

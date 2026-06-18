@@ -1,18 +1,22 @@
-# site settings
+# ── Site ────────────────────────────────────────────────
 title: BonniciLABS
-subtitle: Norbert's pro bono portfolio
-email: info@bonnicilabs.com
-description: Norbert's pro bono portfolio
-baseurl: "/" # the subpath of your site, e.g. /blog
-url: https://bonnicilabs.com # the base hostname & protocol for your site
+description: "Digital forensics, network security, and the tools Norbert Bonnici builds along the way."
 author: Norbert Bonnici
+email: info@bonnicilabs.com
+url: "https://bonnicilabs.com"
+baseurl: ""
+github_username: norbertbonnici
+callsign: "9H"
 
-# social settings
-github_url: 
-
-# build settings
+# ── Build ───────────────────────────────────────────────
+# No theme / no remote_theme — the layout in _layouts is the whole design.
 markdown: kramdown
-highlighter: rouge
-
 sass:
   style: compressed
+
+exclude:
+  - README.md
+  - LICENSE.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
