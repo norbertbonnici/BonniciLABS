@@ -37,6 +37,8 @@ summary: One line for the homepage card.
 tags: tag · tag · tag
 # --- optional ---
 featured: true               # full-width card on the homepage
+icon: /assets/img/projects/my-project.svg    # square image beside the title
+banner: /assets/img/projects/my-project.jpg  # wide cover photo (top of card + detail)
 progress: 40                 # shows a completion meter (+ progress_label)
 progress_label: BUILD
 stack: [Swift, SQLite]       # shown in the detail-page spec strip
@@ -53,6 +55,12 @@ Markdown body for the detail page goes here.
 ```
 
 The homepage and detail page both build themselves from this — no template edits needed.
+
+**Icon vs banner** — both optional and independent:
+- `icon:` is the small square image beside the title. Leave it off and a monogram tile is shown instead.
+- `banner:` is the wide cover photo (across the top of the card and the detail page). Leave it off and there's simply no banner.
+
+A project can have either, both, or neither. Square images suit icons; wide (≈3:1) images suit banners. Drop files in `assets/img/projects/`.
 
 ## Run locally
 

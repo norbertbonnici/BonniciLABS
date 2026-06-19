@@ -7,7 +7,10 @@ state: archive
 archived: true
 order: 12
 summary: A featherweight class robot - Won IEEE Robot Wars 2013
-image: assets/images/chewie.jpg
+icon: /assets/img/projects/chewie.svg
+icon_alt: "Chewie combat robot icon"
+banner: /assets/img/projects/chewie.jpg
+banner_alt: "Chewie on the arena floor"
 tags: archive · robotics
 meta_left: "retained: yes"
 ---

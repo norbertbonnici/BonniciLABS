@@ -5,13 +5,16 @@ layout: default
   <div class="wrap">
     <a class="case-back" href="{{ '/' | relative_url }}#evidence">← case index</a>
 
+    {% if page.banner %}<img class="case-banner" src="{{ page.banner | relative_url }}" alt="{{ page.banner_alt | default: page.title }}">{% endif %}
+
     <div class="case-rec">
       <span>REF&nbsp;{{ page.ref }} · {{ page.category }}</span>
       <span class="st"><span class="dot state--{{ page.state }}"></span>{{ page.status }}</span>
     </div>
 
     <div class="title-row">
-      {% if page.image %}<img class="thumb" src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title }}">
+      {% assign ic = page.icon | default: page.image %}
+      {% if ic %}<img class="thumb" src="{{ ic | relative_url }}" alt="{{ page.icon_alt | default: page.image_alt | default: page.title }}">
       {% else %}<span class="thumb thumb--mono" aria-hidden="true">{{ page.title | slice: 0 }}</span>{% endif %}
       <h1 class="case-title">{{ page.title }}</h1>
     </div>

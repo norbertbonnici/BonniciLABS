@@ -7,7 +7,10 @@ state: archive
 archived: true
 order: 13
 summary: A hobbyweight class robot - Won IEEE Robot Wars 2014
-image: assets/images/dartinvader.jpg
+icon: /assets/img/projects/dart-invader.svg
+icon_alt: "Dart Invader combat robot icon"
+banner: /assets/img/projects/dart-invader.jpg
+banner_alt: "Dart Invader on the arena floor"
 tags: archive · robotics
 meta_left: "retained: yes"
 ---

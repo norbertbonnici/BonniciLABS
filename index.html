@@ -27,32 +27,36 @@ layout: default
 
   <div class="ft-grid">
     {% for p in active %}
+    {% assign ic = p.icon | default: p.image %}
     <a class="ft-card{% if p.featured %} feat{% endif %}" href="{{ p.url | relative_url }}">
-      <div class="rec">
-        <span>REF&nbsp;{{ p.ref }} · {{ p.category }}</span>
-        <span class="st"><span class="dot state--{{ p.state }}"></span>{{ p.status }}</span>
-      </div>
-      <div class="title-row">
-        {% if p.image %}<img class="thumb" src="{{ p.image | relative_url }}" alt="{{ p.image_alt | default: p.title }}" loading="lazy">
-        {% else %}<span class="thumb thumb--mono" aria-hidden="true">{{ p.title | slice: 0 }}</span>{% endif %}
-        <h3>{{ p.title }}</h3>
-      </div>
-      <p>{{ p.summary | escape }}</p>
-      {% if p.tags %}<p class="tags">{{ p.tags }}</p>{% endif %}
-
-      {% if p.progress %}
-      <div class="ft-prog">
-        <div class="ft-prog-label">
-          <span>{{ p.progress_label | default: "PROGRESS" }}</span>
-          <span>{{ p.progress }}%</span>
+      {% if p.banner %}<img class="card-banner" src="{{ p.banner | relative_url }}" alt="{{ p.banner_alt | default: p.title }}" loading="lazy">{% endif %}
+      <div class="card-body">
+        <div class="rec">
+          <span>REF&nbsp;{{ p.ref }} · {{ p.category }}</span>
+          <span class="st"><span class="dot state--{{ p.state }}"></span>{{ p.status }}</span>
         </div>
-        <div class="ft-prog-track"><div class="ft-prog-fill" style="width: {{ p.progress }}%"></div></div>
-      </div>
-      {% endif %}
+        <div class="title-row">
+          {% if ic %}<img class="thumb" src="{{ ic | relative_url }}" alt="{{ p.icon_alt | default: p.image_alt | default: p.title }}" loading="lazy">
+          {% else %}<span class="thumb thumb--mono" aria-hidden="true">{{ p.title | slice: 0 }}</span>{% endif %}
+          <h3>{{ p.title }}</h3>
+        </div>
+        <p>{{ p.summary | escape }}</p>
+        {% if p.tags %}<p class="tags">{{ p.tags }}</p>{% endif %}
 
-      <div class="ref">
-        <span>{{ p.meta_left }}</span>
-        <span class="open">→ open file</span>
+        {% if p.progress %}
+        <div class="ft-prog">
+          <div class="ft-prog-label">
+            <span>{{ p.progress_label | default: "PROGRESS" }}</span>
+            <span>{{ p.progress }}%</span>
+          </div>
+          <div class="ft-prog-track"><div class="ft-prog-fill" style="width: {{ p.progress }}%"></div></div>
+        </div>
+        {% endif %}
+
+        <div class="ref">
+          <span>{{ p.meta_left }}</span>
+          <span class="open">→ open file</span>
+        </div>
       </div>
     </a>
     {% endfor %}
@@ -67,18 +71,22 @@ layout: default
   </div>
   <div class="ft-archive">
     {% for p in archive %}
+    {% assign ic = p.icon | default: p.image %}
     <a class="arc-card" href="{{ p.url | relative_url }}">
-      <div class="rec">
-        <span>REF&nbsp;{{ p.ref }} · {{ p.category }}</span>
-        <span class="st"><span class="dot state--{{ p.state }}"></span>{{ p.status }}</span>
+      {% if p.banner %}<img class="card-banner" src="{{ p.banner | relative_url }}" alt="{{ p.banner_alt | default: p.title }}" loading="lazy">{% endif %}
+      <div class="card-body">
+        <div class="rec">
+          <span>REF&nbsp;{{ p.ref }} · {{ p.category }}</span>
+          <span class="st"><span class="dot state--{{ p.state }}"></span>{{ p.status }}</span>
+        </div>
+        <div class="title-row">
+          {% if ic %}<img class="thumb" src="{{ ic | relative_url }}" alt="{{ p.icon_alt | default: p.image_alt | default: p.title }}" loading="lazy">
+          {% else %}<span class="thumb thumb--mono" aria-hidden="true">{{ p.title | slice: 0 }}</span>{% endif %}
+          <h3>{{ p.title }}</h3>
+        </div>
+        <p>{{ p.summary | escape }}</p>
+        <span class="arc-open">→ open file</span>
       </div>
-      <div class="title-row">
-        {% if p.image %}<img class="thumb" src="{{ p.image | relative_url }}" alt="{{ p.image_alt | default: p.title }}" loading="lazy">
-        {% else %}<span class="thumb thumb--mono" aria-hidden="true">{{ p.title | slice: 0 }}</span>{% endif %}
-        <h3>{{ p.title }}</h3>
-      </div>
-      <p>{{ p.summary | escape }}</p>
-      <span class="arc-open">→ open file</span>
     </a>
     {% endfor %}
   </div>
