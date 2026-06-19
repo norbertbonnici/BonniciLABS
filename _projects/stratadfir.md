@@ -12,6 +12,8 @@ progress: 68
 progress_label: BUILD
 stack: [SwiftUI, The Sleuth Kit, Foundation Models, Swift]
 platform: macOS · iOS
+image: /assets/img/projects/stratadfir.svg
+image_alt: "StrataDFIR app icon"
 year: 2026
 meta_left: "analysis_mode: local"
 # repo: https://github.com/norbertbonnici/...
@@ -33,7 +35,7 @@ StrataDFIR is a digital-forensics workbench for macOS and iPadOS. It sits on top
 
 ## Architecture
 
-Built for the single-analyst, single-Mac case first. Role scoping (RBAC) is sized to that reality rather than bolting on a heavy multi-tenant server model — the permissions match how the tool is actually deployed.
+Built for the single-analyst, single-Mac case first. 
 
 ## Status
 

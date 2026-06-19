@@ -27,12 +27,16 @@ layout: default
 
   <div class="ft-grid">
     {% for p in active %}
-    <article class="ft-card{% if p.featured %} feat{% endif %}">
+    <a class="ft-card{% if p.featured %} feat{% endif %}" href="{{ p.url | relative_url }}">
       <div class="rec">
         <span>REF&nbsp;{{ p.ref }} · {{ p.category }}</span>
         <span class="st"><span class="dot state--{{ p.state }}"></span>{{ p.status }}</span>
       </div>
-      <h3><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
+      <div class="title-row">
+        {% if p.image %}<img class="thumb" src="{{ p.image | relative_url }}" alt="{{ p.image_alt | default: p.title }}" loading="lazy">
+        {% else %}<span class="thumb thumb--mono" aria-hidden="true">{{ p.title | slice: 0 }}</span>{% endif %}
+        <h3>{{ p.title }}</h3>
+      </div>
       <p>{{ p.summary | escape }}</p>
       {% if p.tags %}<p class="tags">{{ p.tags }}</p>{% endif %}
 
@@ -48,9 +52,9 @@ layout: default
 
       <div class="ref">
         <span>{{ p.meta_left }}</span>
-        <a href="{{ p.url | relative_url }}">→ open file</a>
+        <span class="open">→ open file</span>
       </div>
-    </article>
+    </a>
     {% endfor %}
   </div>
 </section>
@@ -68,7 +72,11 @@ layout: default
         <span>REF&nbsp;{{ p.ref }} · {{ p.category }}</span>
         <span class="st"><span class="dot state--{{ p.state }}"></span>{{ p.status }}</span>
       </div>
-      <h3>{{ p.title }}</h3>
+      <div class="title-row">
+        {% if p.image %}<img class="thumb" src="{{ p.image | relative_url }}" alt="{{ p.image_alt | default: p.title }}" loading="lazy">
+        {% else %}<span class="thumb thumb--mono" aria-hidden="true">{{ p.title | slice: 0 }}</span>{% endif %}
+        <h3>{{ p.title }}</h3>
+      </div>
       <p>{{ p.summary | escape }}</p>
       <span class="arc-open">→ open file</span>
     </a>

@@ -9,6 +9,8 @@ summary: One app where project tracking and the home-lab it runs on finally live
 tags: swiftui · swiftdata · ios / macos
 progress: 35
 progress_label: BUILD
+image: /assets/img/projects/switchboard.svg
+image_alt: "Switchboard app icon"
 stack: [SwiftUI, SwiftData]
 platform: iOS 17 · macOS 14
 year: 2026

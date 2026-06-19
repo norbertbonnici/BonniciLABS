@@ -9,7 +9,9 @@ summary: Self-hosted personal finance as a single static Go binary over SQLite, 
 tags: go · sqlite · self-hosted · totp
 stack: [Go, SQLite, Cloudflare Tunnel]
 platform: Self-hosted · Linux
-year: 2025
+year: 2026
+image: /assets/img/projects/lira.svg
+image_alt: "Lira app icon"
 meta_left: "build: single_binary"
 repo: https://github.com/norbertbonnici/Lira
 ---
