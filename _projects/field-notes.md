@@ -4,7 +4,7 @@ ref: FN-04
 category: RESEARCH
 status: ONGOING
 state: ongoing
-order: 4
+order: 5
 summary: A running notebook from reverse-engineering, malware analysis and CTF work — Ghidra teardowns, signal decoding, and the occasional Active Directory box.
 tags: ghidra · re · ctf · radio
 meta_left: "format: notes"
