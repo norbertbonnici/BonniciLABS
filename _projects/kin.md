@@ -14,6 +14,10 @@ platform: iPhone · iPad · Apple Watch
 year: 2026
 icon: /assets/img/projects/kin.png
 icon_alt: "Kin icon — a parent cradling a baby inside the letter K"
+banner: /assets/img/projects/kin-banner.jpg
+banner_alt: "Kin on three iPhones: the pregnancy Today screen, the newborn Today screen and a growth chart"
+og_image: /assets/img/projects/kin-og.jpg
+og_image_alt: "Kin, a private family log from pregnancy to age three, shown on two iPhones"
 meta_left: "data: yours"
 description: "Kin is a private family log for pregnancy and a child's first three years, for iPhone, iPad and Apple Watch."
 ---
