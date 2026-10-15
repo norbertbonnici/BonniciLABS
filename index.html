@@ -41,7 +41,7 @@ layout: default
           <h3>{{ p.title }}</h3>
         </div>
         <p>{{ p.summary | escape }}</p>
-        {% if p.tags %}<p class="tags">{{ p.tags }}</p>{% endif %}
+        {% if p.tags %}<p class="tags">{{ p.tags | join: " " }}</p>{% endif %}
 
         {% if p.progress %}
         <div class="ft-prog">
