@@ -42,7 +42,7 @@ layout: default
       {{ content }}
     </div>
 
-    {% if page.tags %}<p class="case-tags">{{ page.tags }}</p>{% endif %}
+    {% if page.tags %}<p class="case-tags">{{ page.tags | join: " " }}</p>{% endif %}
     {% if page.repo %}<p class="case-links"><a href="{{ page.repo }}" rel="noopener">→ repository</a></p>{% endif %}
 
     <nav class="case-other">

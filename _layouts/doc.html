@@ -1,0 +1,26 @@
+---
+layout: default
+---
+{%- comment -%}
+  A plain document page that belongs to a project, e.g. a privacy policy or support page.
+  Front matter: title, project (display name), project_url, ref, updated (optional).
+{%- endcomment -%}
+<article class="case doc">
+  <div class="wrap">
+    <a class="case-back" href="{{ page.project_url | relative_url }}">← {{ page.project | downcase }}</a>
+
+    <div class="case-rec">
+      <span>REF&nbsp;{{ page.ref }} · {{ page.project | upcase }}</span>
+      {% if page.updated %}<span>UPDATED {{ page.updated | date: "%d %b %Y" | upcase }}</span>{% endif %}
+    </div>
+
+    <div class="title-row">
+      {% if page.icon %}<img class="thumb" src="{{ page.icon | relative_url }}" alt="{{ page.project }} icon">{% endif %}
+      <h1 class="case-title">{{ page.heading | default: page.title }}</h1>
+    </div>
+
+    <div class="case-body">
+      {{ content }}
+    </div>
+  </div>
+</article>
