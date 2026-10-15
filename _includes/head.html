@@ -6,9 +6,21 @@
 <meta name="theme-color" content="#0B0E14">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="{{ site.title }}">
-<meta property="og:description" content="{{ site.description }}">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:title" content="{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}">
+<meta property="og:description" content="{{ page.description | default: page.summary | default: site.description | strip_html | strip_newlines }}">
 <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+{%- comment -%} Share image for search results and link previews: page.og_image, else the project's. {%- endcomment -%}
+{% assign og_img = page.og_image %}{% assign og_alt = page.og_image_alt %}
+{% if og_img == nil and page.project_url %}{% assign owner = site.projects | where: "url", page.project_url | first %}{% assign og_img = owner.og_image %}{% assign og_alt = owner.og_image_alt %}{% endif %}
+{% if og_img %}
+<meta property="og:image" content="{{ site.url }}{{ og_img }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{ og_alt | default: page.title }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{{ site.url }}{{ og_img }}">
+{% endif %}
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
